@@ -1,0 +1,98 @@
+﻿
+@model List<Project.Models.Tutor>
+
+@{Layout = "~/Views/Shared/_Layout.cshtml";}
+
+<section class="alizarin">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                
+                <center><h1 id="sansarif">Total @Model.Count Results Found.</h1></center>
+
+            </div>
+            <div class="col-sm-4">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="~/Home/index">Home</a></li>
+                    <li class="active">Search</li>
+                </ul>
+            </div>
+        </div><!--  row -->
+    </div>
+</section>
+<section id="title" class="emerald">
+    <div class="container">
+        <center><h1 id="sansarif">Available Tutors Of your Choice Are.</h1></center>
+        @foreach (var list in Model)
+        {
+            <hr>
+         <div class="row">
+            <div class="col-sm-3">
+                <center> <img class="img-responsive img-thumbnail img-circle" id="set1122" src="~/images/Tpic/@list.imagename" alt="tutorimage" /></center>
+            </div>
+            <div class="col-sm-3">
+                 <h3>Name: @list.name</h3>
+                <h4>SurName: @list.sname</h4>
+                <h4>Skype Id: @list.skype</h4>
+                <h4>Email Id: @list.email</h4>
+                <h4>Contact No: @list.phone</h4>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion"
+                                   href="#@list.Id">
+                                    Qualification
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="@list.Id" class="panel-collapse collapse in">
+                            <div class="panel-body" id="blacks">
+                                @list.details
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion"
+                                   href="#@list.skype">
+                                    Experiance
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="@list.skype" class="panel-collapse collapse">
+                            <div class="panel-body" id="blacks">
+                                @list.experiance
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title" >
+                                <a data-toggle="collapse" data-parent="#accordion"
+                                   href="#@list.phone">
+                                    About Tutor
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="@list.phone" class="panel-collapse collapse">
+                            <div class="panel-body" id="blacks">
+                                @list.about
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--  row -->
+            <hr>
+            
+        }
+
+
+    </div>
+</section><!--/#title-->  

@@ -1,0 +1,75 @@
+﻿@model Project.Models.Tutor
+
+@{Layout = "~/Views/Shared/_Layout.cshtml";}
+
+	<section id="title" class="emerald">
+        <div class="container">
+		 <h1>Tutor SignIn</h1>
+         <h4>TutorHunt is the Best opportunity for tutors to Teach.</h4><hr>
+		<center><br><h3 class="alizarin">UserName or Password is Invalid....</h3><br>
+       
+            @using (Html.BeginForm("signon", "Signin", FormMethod.Post, new { @class = "form-horizontal" }))
+            {
+                    <div class="form-group">
+                        @Html.Label("UserName", new { @for = "name", @class = "col-md-offset-2 col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.TextBoxFor(m => m.name, new { @class = "form-control", @placeholder = "Enter UserName", @required = "required" })
+
+                        </div>
+                    </div>
+                
+                    <div class="form-group">
+                        @Html.Label("Password", new { @for = "password", @class = "col-md-offset-2 col-sm-2 control-label" })
+                        <div class="col-sm-4">
+                            @Html.PasswordFor(m => m.password, new { @class = "form-control", @placeholder = "Enter Password", @required = "required"})
+
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="form-group">
+                        <div class="col-md-offset-4 col-sm-4">
+                            <input type="submit" value="Login" class="btn btn-primary btn-md btn-block" />
+                            <button class="btn btn-danger btn-sm btn-block" value="reset">Reset</button>
+                        </div>
+                    </div>
+
+            }
+            <br>
+			<center><h3>Or connect with us using..</h3></center>
+			 <a class="btn btn-social btn-facebook" href="https://www.facebook.com/mehmood.nisar.1"><i class="icon-facebook"></i></a>
+					<a class="btn btn-social btn-google-plus" href="https://plus.google.com/"><i class="icon-google-plus"></i></a> 
+					<a class="btn btn-social btn-twitter" href="#"><i class="icon-twitter"></i></a> 
+					<a class="btn btn-social btn-linkedin" href="#"><i class="icon-linkedin"></i></a>
+		</center>
+        </div>
+    </section><!--/#title-->  
+	
+    <section class = "alizarin">
+       <div class="container">
+			<div class = "row">
+			<div class = "col-md-4"><br>
+				<img src ="images/ico/1.png" alt="pic">
+				<h3>1. Select your private tutor</h3>
+				<p>Find private tutors you're comfortable with to help you 
+				succeed in everything from beginners , or GCSE Maths to
+				degree level Physics. Choose from face-to-face tutors or online private tutoring.</p>
+			</div>
+			<div class = "col-md-4">
+				<img src ="images/ico/2.png" alt="pic">
+				<h3>2. Discuss your educational needs</h3>
+				<p>Use our secure platform to share diaries with private tutors, discuss syllabi,
+				and arrange the best location for your private tuition. We'll take up references 
+				and run an identity check for you.</p>
+			</div>
+			<div class = "col-md-4">
+				<img src ="images/ico/3.png" alt="pic">
+				<h3>3. Start learning</h3>
+				<p>connect with your private tutor and begin your lessons.<br> No fixed 
+				term commitments. No hourly commission.<br> Just private tuition.</p>
+			</div>
+		</div>
+      </div> 
+    </section><!--/#title-->  
+
+      

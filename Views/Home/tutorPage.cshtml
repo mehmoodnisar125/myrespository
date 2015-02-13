@@ -1,0 +1,65 @@
+﻿@model Project.Models.Tutor
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <section id="title" class="emerald">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Welcome @Model.name</h1>
+                <p>TutorHunt.Com We Connect Students And Tutors.</p><br>
+            </div>
+
+            <div class="col-sm-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="~/Home/index">Home</a></li>
+                    <li class="active">Profile</li>
+                </ul>
+            </div>
+        </div>
+        <center> <img class="img-responsive img-thumbnail img-circle" id="set1122" src="~/images/Tpic/@Model.imagename" alt="tutorimage" /></center>
+    </div>
+
+
+
+    <div class="container">
+        <h1>Tutor Profile</h1>
+        <h4>TutorHunt is the Best opportunity for tutors to Teach.</h4><hr>
+            <br><br>
+            <h3>UserName</h3>
+            <div class="alert alert-success" role="alert">
+                <a href="#" class="alert-link">@Model.name</a>
+            </div>
+            <h3>SurName</h3>
+            <div class="alert alert-success" role="alert">
+                <a href="#" class="alert-link">@Model.sname</a>
+            </div>
+            <h3>Email</h3>
+            <div class="alert alert-success role="alert">
+                <a href="#" class="alert-link">@Model.email</a>
+            </div>
+            <h3>Phone</h3>
+            <div class="alert alert-success" role="alert">
+                <a href="#" class="alert-link">@Model.phone</a>
+            </div>
+            <h3>Skype Id</h3>
+            <div class="alert alert-success" role="alert">
+                <a href="#" class="alert-link">@Model.skype</a>
+            </div>
+
+</div>
+</section><!--/#title-->
+<div class="alizarin">
+    <div class="container">
+        <center><h2>Want To Update OR Delete your Account</h2></center>
+        <center><h4>You can easily update or delte your accout</h4></center>
+        <br><br>
+        <br><br><br>
+
+        <a href="~/Update/update"><button type="button" class="btn btn-success btn-lg btn-block">Update Accout</button></a><br>
+        <a href="~/Delete/delete"><button type="button" class="btn btn-primary btn-lg btn-block">Delete Account</button></a>
+            <br><br><br><br><br><br><br><br>
+</div>
+</div>

@@ -15,7 +15,6 @@ x64/
 x86/
 build/
 bld/
-[Bb]in/
 [Oo]bj/
 
 # Roslyn cache directories
@@ -149,7 +148,6 @@ AppPackages/
 # Others
 sql/
 *.Cache
-ClientBin/
 [Ss]tyle[Cc]op.*
 ~$*
 *~

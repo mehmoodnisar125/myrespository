@@ -1,0 +1,183 @@
+﻿@model Project.Models.Tutor
+
+@{Layout = "~/Views/Shared/_Layout.cshtml";}
+
+<section class="alizarin">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>@Model.name</h1>
+                <h3>You are going to update your account</h3><br>
+            </div>
+
+            <div class="col-sm-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="~/Home/index">Home</a></li>
+                    <li class="active">Update</li>
+                </ul>
+            </div>
+        </div><!--End of row-->
+        <center> <img class="img-responsive img-thumbnail img-circle" src="~/images/Tpic/@Model.imagename" alt="tutorimage" /></center>
+    </div>
+</section>
+
+<section id="title" class="emerald">
+    <div class="container">
+        <h1>Account Updation</h1>
+        <p>you can easily update your account in tutorHunt.com </p>
+        <br><h3>Personal Details</h3><br>
+        @using (Html.BeginForm("updateOn", "Update", FormMethod.Post, new { @class = "form-horizontal", @id = "formid", enctype = "multipart/form-data" }))
+        {
+            <div class="form-group">
+                @Html.Label("UserName", new { @for = "name", @class = "col-sm-2 control-label" })
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.name, new { @class = "form-control", @placeholder = "Enter UserName", @required = "required" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("SurName", new { @for = "surname", @class = "col-sm-2 control-label" })
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.sname, new { @class = "form-control", @placeholder = "Enter SurName", @required = "required" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Skype ID", new { @for = "skype", @class = "col-sm-2 control-label" })
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.skype, new { @class = "form-control", @placeholder = "Enter Skype Id", @required = "required" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Email ID", new { @for = "email", @class = "col-sm-2 control-label" })
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.email, new { @id = "inputEmail3", @class = "form-control", @placeholder = "Enter Email Id", @required = "required" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Address", new { @for = "address", @class = "col-sm-2 control-label" })
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.address, new { @class = "form-control", @placeholder = "Enter Your Address", @required = "required" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Phone", new { @for = "phone", @class = "col-sm-2 control-label" })
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.phone, new { @class = "form-control", @placeholder = "Enter Your Personal Number", @required = "required" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Password", new { @for = "password", @class = "col-sm-2 control-label" })
+                <div class="col-sm-4">
+                    @Html.PasswordFor(m => m.password, new { @class = "form-control", @placeholder = "Enter Password", @required = "required" })
+                </div>
+            </div>
+
+            <input type="file" name="file" id="file" style="width: 100%;" required /> <br />
+
+
+            <br><h3 id="blacks">Subjects That You Can Taught </h3><br>
+            <table class="table" id="blacks">
+
+                <tbody>
+                    <tr class="active">
+                        <td><input type="checkbox" name="option1"> Math</td>
+                        <td><input type="checkbox" name="option2"> English</td>
+                        <td><input type="checkbox" name="option3"> Science</td>
+
+                    </tr>
+                    <tr class="danger">
+                        <td><input type="checkbox" name="option4"> Physics</td>
+                        <td><input type="checkbox" name="option5"> Chemistry</td>
+                        <td><input type="checkbox" name="option6"> Biology</td>
+                    </tr>
+                    <tr class="warning">
+                        <td><input type="checkbox" name="option7"> Computer</td>
+                        <td><input type="checkbox" name="option8"> Accounting</td>
+                        <td><input type="checkbox" name="option9"> History</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><h3 id="blacks">Programming Subjects That You Can Taught </h3><br>
+
+            <table class="table" id="blacks">
+
+                <tbody>
+                    <tr class="active">
+                        <td><input type="checkbox" name="option11"> Android</td>
+                        <td><input type="checkbox" name="option12"> C++</td>
+                        <td><input type="checkbox" name="option13"> Java</td>
+
+                    </tr>
+                    <tr class="danger">
+                        <td><input type="checkbox" name="option14"> Python</td>
+                        <td><input type="checkbox" name="option15"> Mysql</td>
+                        <td><input type="checkbox" name="option16"> C Sharp</td>
+                    </tr>
+                    <tr class="warning">
+                        <td><input type="checkbox" name="option17"> Object Oriented Programming</td>
+                        <td><input type="checkbox" name="option18"> Data Structures</td>
+                        <td><input type="checkbox" name="option19"> Networking</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br><h3>Qualification Details</h3>
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Enter Your Qualification Details</h4>
+                </div>
+                <div class="col-md-8">
+
+                    @Html.TextAreaFor(x1 => x1.details, new { @id = "message", @class = "form-control", @required = "required", @placeholder = "Enter Your Qualification Details" })
+
+                </div>
+            </div><!--/#row-->
+            <br>
+
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4 id="blacks">About YourSelf</h4>
+                </div>
+                <div class="col-md-8">
+                    @Html.TextAreaFor(x2 => x2.about, new { @id = "message", @class = "form-control", @required = "required", @placeholder = "Enter About YourSelf" })
+                </div>
+            </div><!--/#row-->
+
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4 id="blacks">Teaching Experiance</h4>
+                </div>
+                <div class="col-md-8">
+                    @Html.TextAreaFor(x3 => x3.experiance, new { @id = "message", @class = "form-control", @required = "required", @placeholder = "Enter Your Qualification Experiance" })
+                </div>
+            </div><!--/#row-->
+
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4 id="blacks">Tutoring Approach</h4>
+                </div>
+                <div class="col-md-8">
+                    @Html.TextAreaFor(x4 => x4.approach, new { @id = "message", @class = "form-control", @required = "required", @placeholder = "Enter Your Tutoring Approach" })
+                </div>
+            </div><!--/#row-->
+
+            <br>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-sm-4">
+                    <input type="submit" value="Update Account" class="btn btn-primary btn-md btn-block" />
+                </div>
+            </div>
+        }<!--/#form-->
+
+
+    </div>
+</section><!--/#title-->  

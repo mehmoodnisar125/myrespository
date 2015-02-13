@@ -1,0 +1,128 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>TutorHunt connect students and tutors..</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/prettyPhoto.css" rel="stylesheet">
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="~/images/ico/favicon.png">
+
+</head><!--/head-->
+<body>
+    @{
+        HttpContext.Current.Response.AddHeader("Cache-Control", "no-cache , no-store , must-revalidate");
+        HttpContext.Current.Response.AddHeader("Pragma" , "no-cache");
+        HttpContext.Current.Response.AddHeader("Expires" , "0");
+        
+        
+    }
+    <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="~/Home/index"><img src="~/images/logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="~/Home/index"><img src="~/images/name.png" alt="logo"></a>
+            </div>  
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="~/Home/index">Home</a></li>
+                    <li><a href="~/Find/findtutor">Find Tutor</a></li>
+                    <li><a href="~/Home/faq">FAQ</a></li>
+                    <li><a href="~/Contact/contact">Contact Us</a></li>
+                    <li><a href="~/Home/about">About</a></li>
+                    @if(Session["news"] == null)
+                    {
+                        <li id="hide1"><a href="~/Register/registration">Tutor Registration</a></li>
+                        <li id="hide2"><a href="~/Signin/signin">Tutor Login</a></li>
+                    }
+                    @if(Session["news"] != null)
+                    { 
+                        <li id="show1"><a href="~/Home/tutorPage">Tutor Profile</a></li>
+                        <li id="show2"><a href="~/Home/logout">LogOut</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </header><!--/header-->
+
+    @RenderBody()
+
+    <section id="bottom" class="wet-asphalt">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <h4>About Us</h4>
+                    <p>
+                        We are introducing educational environment where students
+                        can get tuition from best tutors across world. We also accommodate
+                        Pakistani teachers, on our website. you have an
+                        opportunity to find best tutor and Pakistani teachers of your
+                        own choice.
+                    </p>
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-4 col-sm-6">
+                    <h4>Connect With Us</h4>
+                    <ul>
+                        <li><a href="https://www.facebook.com/mehmood.nisar.1">Facebook</a></li>
+                        <li><a href="www.googleplus.com">Google+</a></li>
+                        <li><a href="www.twitter.com">Twitter</a></li>
+                    </ul>
+                </div><!--/.col-md-3-->
+                <div class="col-md-4 col-sm-6">
+                    <h4>For more information</h4>
+                    <address>
+                        <strong>Call Us at.</strong><br>
+                        0322-2222222<br>
+                        OR<br>
+                        0300-2222222<br>
+                    </address>
+
+                </div> <!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2015 TutorHunt. All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li class="active"><a href="~/Home/index">Home</a></li>
+                        <li><a href="~/Home/faq">FAQ</a></li>
+                        <li><a href="~/Contact/contact">Contact Us</a></li>
+                        <li><a href="~/Home/about">About</a></li>
+                        <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.prettyPhoto.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+  
+   </body>
+</html>
